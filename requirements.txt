@@ -1,1 +1,4 @@
+#DJANGO
 django==5.2.1
+#POSTGRESQL
+psycopg2==2.9.10
