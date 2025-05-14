@@ -1,3 +1,5 @@
+#CREAR ENTORNO VIRTUAL
+    python -m venv env
 # ACTIVAR ENTORNO VIRTUAL
     env/Scripts/activate
 # DESACTIVAR ENTORNO VIRTUAL
