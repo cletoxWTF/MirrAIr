@@ -1,0 +1,22 @@
+# ACTIVAR ENTORNO VIRTUAL
+    env/Scripts/activate
+# DESACTIVAR ENTORNO VIRTUAL
+    deactive
+# INSTALAR requirements.txt
+    pip install -r requirements.txt
+
+                                - - - DJANGO - - -
+***MIGRACIONES***
+--> Cuando se haga cambios en la BD
+# CREAR MIGRACIONES 
+    python manage.py makemigrations
+# MIGRAR
+    python manage.py migrate
+# VER MIGRACIONES PENDIENTES
+    python manage.py showmigrations
+
+***APP**
+#EJECUTAR DJANGO
+    python manage.py runserver
+#CREAR SUPERUSUARIO
+    python python manage.py createsuperuser
