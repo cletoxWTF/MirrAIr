@@ -60,7 +60,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-#Use Postgresql for LLMs
+#USE POSTGRESQL FOR LLMs
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
