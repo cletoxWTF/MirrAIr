@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+#build/ This is for react and is necesary to git
 develop-eggs/
 dist/
 downloads/
