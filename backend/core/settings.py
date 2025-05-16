@@ -37,7 +37,7 @@ PROJECT_APPS = [
 
 THIRD_PART_APPS =[
     'corsheaders',
-    'res_framework',
+    'rest_framework',
     'ckeditor',
     'ckeditor_uploader'
 ]
@@ -46,8 +46,13 @@ INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PART_APPS
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar':'full',
-        'autoParagraph': False
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
     }
 }
 CKEDITOR_UPLOAD_PATH = "/media/"
@@ -143,12 +148,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build/static')]
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticateOrReadOnly'
+    ],
+}
+
+CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV')
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEV')
+
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
 if not DEBUG:
     ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
+    CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
+    CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')

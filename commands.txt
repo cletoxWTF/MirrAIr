@@ -22,3 +22,8 @@
     python manage.py runserver
 #CREAR SUPERUSUARIO
     python python manage.py createsuperuser
+
+                                - - - REACT - - -
+***APP**
+#CREAR APP
+    npx create-react-app . #THE POINT IS FOR CREATE A PROJECT IN ITSELF FOLDER
