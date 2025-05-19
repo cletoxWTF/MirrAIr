@@ -6,6 +6,8 @@ env = environ.Env()
 environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+#THAT BASE_DIR IS FOR LOCATE THE ROOT FOLDER
+BASE_DIR1 = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -58,7 +60,7 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_UPLOAD_PATH = "/media/"
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware"
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -73,7 +75,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR,'templates')], #TO TEMPLATES FOLDER
+        "DIRS": [BASE_DIR1 / 'frontend' / 'build'], #TO BUILD FOLDER OF REACT
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -148,9 +150,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build/static')]
+
+STATICFILES_DIRS = [BASE_DIR1 / 'frontend' / 'build' / 'static',]
+
+STATIC_ROOT = BASE_DIR1 / 'backend' / 'static'
+STATIC_URL = '/static/'
+
+
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

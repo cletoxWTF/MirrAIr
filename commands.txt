@@ -27,3 +27,11 @@
 ***APP**
 #CREAR APP
     npx create-react-app . #THE POINT IS FOR CREATE A PROJECT IN ITSELF FOLDER
+#CREAR AMBIENTE VIRTUAL EN BASE A PACKAGE.JSON
+    npm i
+#PARA COMPILAR
+    npm run build
+#RECOLECTAR ARCHIVOS ESTATICOS DE REACT A DJANGO
+    python .\manage.py collectstatic #SE DEBE MODIFICAR settings.py
+#PLANTILLAS CSS
+    npm install -D tailwindcss postcss autoprofixer
