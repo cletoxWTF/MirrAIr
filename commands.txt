@@ -33,5 +33,5 @@
     npm run build
 #RECOLECTAR ARCHIVOS ESTATICOS DE REACT A DJANGO
     python .\manage.py collectstatic #SE DEBE MODIFICAR settings.py
-#PLANTILLAS CSS
-    npm install -D tailwindcss postcss autoprofixer
+#PARA INSTALAR TYPESCRIPT(PARA INSTALAR OTRA VERSIÓN DE JAVA)
+    npm install typescript@4.9.5 #ESTA VERSION ES COMPATIBLE CON REACT-SCRIPT 5.0.1
